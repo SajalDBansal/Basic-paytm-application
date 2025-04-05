@@ -1,11 +1,12 @@
 const mongoose = require("mongoose");
+const { BACKEND_URL } = require("./config");
 
 main()
     .then(() => console.log("Connected to db"))
     .catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect('mongodb://localhost:27017/paytm');
+    await mongoose.connect(BACKEND_URL);
 }
 
 const userSchema = mongoose.Schema({
